@@ -12,8 +12,9 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
   })
-  .catch(() => {
+  .catch((err) => {
     console.log("Connection failed!");
+    console.log(err);
   });
 app.use(express.json());
 app.use("/api/user", userRoute);
