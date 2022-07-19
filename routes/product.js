@@ -60,6 +60,7 @@ router.get("/products", async (req, res) => {
     if (queryNew) {
       products = await Product.find().sort({ createdAt: -1 }).limit(5);
     } else if (queryCategory) {
+      console.log("gotem")
       products = await Product.find({
         caregories: {
           $in: [queryCategory],
