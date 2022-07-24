@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const stripe = require("stripe")(process.env.STRIPE_SEC);
+
+router.get("/",()=>res.status(200).json("successful"))
 router.post("/payment", (req, res) => {
   stripe.charges.create(
     {
